@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+Task Name <input type="text" id="myText" value="">
+<p> Type in the name of the task and click 'Insert Task' </p>
+<button onclick="taskList(this)">Insert Task</button>
+<ul id="list">
+</ul>
+
+<script src="jquery-1.11.3.min.js"></script>
+<script>
+
+function taskList(textBox) {
+    var toDo = document.createElement('li');
+	$(toDo).addClass(".listItem");
+	$(toDo).text($("#myText").val());
+	$('#list').append($(toDo));
+	$(toDo).click(function() {
+		$(this).remove();
+	});
+	}
+</script>
+
+</body>
+</html>
